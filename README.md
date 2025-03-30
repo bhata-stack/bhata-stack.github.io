@@ -1,2 +1,2 @@
-# bhata-stack.github.io
-A simple personal website.
+# My Website
+A simple website about myself that includes my projects and other such details.
