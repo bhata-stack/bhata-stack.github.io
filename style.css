@@ -1,0 +1,106 @@
+body {
+  color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #fff5ef;
+	max-width: 550px;
+	padding: 4em; /* update for 0 padding on mobile */
+	margin-inline: auto;
+}
+
+.main-box {
+  display: grid;
+  grid-template:
+    "header header"
+    "nav headshot"
+    "nav blurb"
+    "footer footer"
+    / 1fr 2fr;
+  gap: 1em;
+}
+
+.header {
+  grid-area: header;
+  font-size: 100%;
+  position: relative;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.2cm;
+  letter-spacing: 0;
+  transition: letter-spacing 300ms ease-out 200ms
+}
+
+.header .orbit-planet {
+  position: absolute;
+  background-color: black;
+  height: 5px;
+  width: 5px;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  top: 27%;
+  left: 13.5%;
+  border-radius: 100%;
+}
+
+.header h1:hover + .orbit-planet {
+  animation: circle-orbit 4s
+}
+
+@keyframes circle-orbit {
+  0% {
+    opacity: 0.1;
+    transform: rotate(0deg) rotate(0deg);
+  }
+
+  90% {
+    opacity: 1;
+    transform: rotate(360deg) translateX(60px) translateY(15px) rotate(-360deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(360deg) translateX(60px) translateY(15px) rotate(-360deg);
+  }
+}
+
+.header h4 {
+  font-size: 1.2em;
+  margin-top: 0.2cm;
+  font-style: italic;
+}
+
+.navbar {
+  grid-area: nav;
+  font-size: 1.2em;
+}
+
+.navbar li {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+.photo {
+  grid-area: headshot;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.photo img {
+  width: 160px;
+  height: 100%;
+  display: inline-block;
+}
+
+.blurb {
+  grid-area: blurb;
+}
+
+.footer {
+  grid-area: footer;
+  text-align: center;
+  font-size: 0.7em;
+  font-style: italic;
+}
