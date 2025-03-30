@@ -11,14 +11,14 @@ body {
   display: grid;
   grid-template:
     "header header"
-    "nav headshot"
-    "nav blurb"
+    "nav picture"
     "footer footer"
     / 1fr 2fr;
   gap: 1em;
 }
 
 .header {
+  padding-left: 0.2em;
   grid-area: header;
   font-size: 100%;
   position: relative;
@@ -76,26 +76,81 @@ body {
   font-size: 1.2em;
 }
 
-.navbar li {
-  margin-top: 0.2em;
-  margin-bottom: 0.2em;
+.nav p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 0.2em;
+  background-color: inherit;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav #home {
+  transition: scale 300ms ease-in 100ms, background-color 300ms ease-in 100ms;
+}
+
+.nav #home:hover {
+  scale: 110%;
+  background-color: #ffffff;
+}
+
+.nav #about-me {
+  transition: scale 300ms ease-in 100ms, background-color 300ms ease-in 100ms;
+}
+
+.nav #about-me:hover {
+  scale: 110%;
+  background-color: #ffffcc;
+}
+
+.nav #portfolio {
+  transition: scale 300ms ease-in 100ms, background-color 300ms ease-in 100ms;
+}
+
+.nav #portfolio:hover {
+  scale: 110%;
+  background-color: #e6e6d9;
+}
+
+.nav #resume {
+  transition: scale 300ms ease-in 100ms, background-color 300ms ease-in 100ms;
+}
+
+.nav #resume:hover {
+  scale: 110%;
+  background-color: #cccce6;
+}
+
+.nav #contact {
+  transition: scale 300ms ease-in 100ms, background-color 300ms ease-in 100ms;
+}
+
+.nav #contact:hover {
+  scale: 110%;
+  background-color: #9999ff;
 }
 
 .photo {
-  grid-area: headshot;
+  grid-area: picture;
   width: 100%;
   height: 100%;
   text-align: center;
 }
 
 .photo img {
-  width: 160px;
+  width: 200px;
   height: 100%;
   display: inline-block;
+  border-radius: 5px;
 }
 
-.blurb {
-  grid-area: blurb;
+.text-blurb {
+  grid-area: picture;
+  width: 100%;
+  height: 100%;
 }
 
 .footer {
