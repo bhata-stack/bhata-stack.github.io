@@ -7,12 +7,26 @@ body {
 	margin-inline: auto;
 }
 
+/* Main grid box */
 .main-box {
   display: grid;
   grid-template:
     "header header"
     "nav picture"
     "footer footer"
+    / 1fr 2fr;
+  gap: 1em;
+}
+
+/* Main grid box with horizontal navbar */
+.content-main-box {
+  display: grid;
+  grid-template:
+    "header header header"
+    "nav nav nav"
+    "content content content"
+    "content content content"
+    "footer footer footer"
     / 1fr 2fr;
   gap: 1em;
 }
@@ -31,6 +45,7 @@ body {
   transition: letter-spacing 300ms ease-out 200ms
 }
 
+/* Animate orbit */
 .header .orbit-planet {
   position: absolute;
   background-color: black;
@@ -83,54 +98,71 @@ body {
   background-color: inherit;
 }
 
+/* Horizontal navbar */
+.nav ul {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  margin-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: inherit;
+  display: inline-block;
+  list-style: none;
+}
+
 .nav a {
   text-decoration: none;
   color: black;
 }
 
+/* Animate color backgrounds on navbar */
 .nav #home {
-  transition: scale 300ms ease-in 100ms, background-color 300ms ease-in 100ms;
+  transition: scale 300ms ease-in 20ms, background-color 300ms ease-in 20ms;
 }
 
 .nav #home:hover {
   scale: 110%;
-  background-color: #ffffff;
+  background-color: #feffa3;
 }
 
 .nav #about-me {
-  transition: scale 300ms ease-in 100ms, background-color 300ms ease-in 100ms;
+  transition: scale 300ms ease-in 20ms, background-color 300ms ease-in 20ms;
 }
 
 .nav #about-me:hover {
   scale: 110%;
-  background-color: #ffffcc;
+  background-color: #ffd4e5;
 }
 
 .nav #portfolio {
-  transition: scale 300ms ease-in 100ms, background-color 300ms ease-in 100ms;
+  transition: scale 300ms ease-in 20ms, background-color 300ms ease-in 20ms;
 }
 
 .nav #portfolio:hover {
   scale: 110%;
-  background-color: #e6e6d9;
+  background-color: #d4ffea;
 }
 
 .nav #resume {
-  transition: scale 300ms ease-in 100ms, background-color 300ms ease-in 100ms;
+  transition: scale 300ms ease-in 20ms, background-color 300ms ease-in 20ms;
 }
 
 .nav #resume:hover {
   scale: 110%;
-  background-color: #cccce6;
+  background-color:  	#eecbff;
 }
 
 .nav #contact {
-  transition: scale 300ms ease-in 100ms, background-color 300ms ease-in 100ms;
+  transition: scale 300ms ease-in 20ms, background-color 300ms ease-in 20ms;
 }
 
 .nav #contact:hover {
   scale: 110%;
-  background-color: #9999ff;
+  background-color: #dbdcff;
 }
 
 .photo {
@@ -158,4 +190,9 @@ body {
   text-align: center;
   font-size: 0.7em;
   font-style: italic;
+}
+
+.content {
+  grid-area: content;
+  width: 100%;
 }
