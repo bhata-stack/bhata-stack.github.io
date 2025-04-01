@@ -3,7 +3,7 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: #fff5ef;
 	max-width: 550px;
-	padding: 4em; /* update for 0 padding on mobile */
+	padding: 1.5em 4em 1.5em 4em; /* update for 0 padding on mobile */
 	margin-inline: auto;
 }
 
@@ -195,4 +195,53 @@ body {
 .content {
   grid-area: content;
   width: 100%;
+}
+
+.boxes {
+  display: grid;
+  grid-template-rows: repeat(2, 200px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.boxes div {
+  border: #dbcfc8 solid 4px;
+  border-radius: 7px;
+  background-size: cover;
+  background-position: center;
+  transition: scale 300ms;
+  cursor: pointer;
+}
+
+.boxes p {
+  margin: 10px;
+  padding: 2px;
+  display: inline-block;
+  background-color: rgba(255, 244, 230, 0.8);;
+  border-radius: 7px;
+}
+
+.boxes div:hover {
+  scale: 115%;
+}
+
+.boxes #project-one {
+  grid-area: 1 / 1 / 2 / 3;
+  background-image: url("/images/qsim.png");
+}
+
+.boxes #project-two {
+  grid-area: 1 / 3 / 3 / 4;
+  background-image: url("/images/galaxy_vae.png");
+}
+
+.boxes #project-three {
+  grid-area: 2 / 1 / 3 / 2;
+  background-image: url("/images/real_chua.jpg");
+}
+
+.boxes #project-four {
+  grid-area: 2 / 2 / 3 / 3;
+  background-image: url("/images/ising_model.png");
+  background-color: white; /* Ising model image has transparent background */
 }
